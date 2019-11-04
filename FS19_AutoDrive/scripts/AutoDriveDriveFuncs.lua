@@ -473,7 +473,7 @@ function AutoDrive:driveToNextWayPoint(vehicle, dt)
             local distance1 = AutoDrive:getDistance(x,z, destination.x, destination.z);
             local distance2 = AutoDrive:getDistance(x,z, start.x, start.z);
             if distance1 < 20 or distance2 < 20 then
-                if vehicle.ad.speedOverride > 12 then
+                if vehicle.ad.speedOverride > 12 and distanceToTarget < 10 then
                     vehicle.ad.speedOverride = 12;
                 end;
             end;
